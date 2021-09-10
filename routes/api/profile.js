@@ -6,6 +6,7 @@ const { check, validationResult } = require('express-validator');
 const auth = require('../../middelware/auth.js');
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
+const Post = require('../../models/Post');
 
 // @route GET
 // @desc Get all profiles Route
@@ -98,6 +99,7 @@ router.post(
       instagram,
       linkedin,
     } = req.body;
+    console.log(skills);
 
     const profileFields = {};
 
@@ -151,6 +153,7 @@ router.post(
 // @access Private
 router.delete('/', auth, async (req, res) => {
   try {
+    await Post.deleteMany({ user: req.user.id });
     await Profile.findOneAndRemove({ user: req.user.id });
     await User.findByIdAndRemove(req.user.id);
 
