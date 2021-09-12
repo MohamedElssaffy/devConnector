@@ -13,15 +13,13 @@ import ProfileGithub from './ProfileGithub';
 
 const Profile = ({
   getProfileById,
-  match: {
-    params: { id },
-  },
+  match,
   auth,
   profile: { profile, loading },
 }) => {
   useEffect(() => {
-    getProfileById(id);
-  }, [getProfileById, id]);
+    getProfileById(match.params.id);
+  }, [getProfileById, match]);
 
   return (
     <Fragment>
