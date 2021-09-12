@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { deleteFeatures } from '../../actions/profile';
+import formatDate from '../../utils/formatDate';
 
 const Experience = ({ experience, deleteFeatures }) => {
-  const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-  const formatDate = (date) =>
-    new Date(date).toLocaleDateString('en-US', options);
-
   const experiences = experience.map((exp) => (
     <tr key={exp._id}>
       <td>{exp.company}</td>
