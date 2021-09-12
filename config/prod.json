@@ -1,5 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://connector:allahisone@devconnector.w6rvx.mongodb.net/DevConnector?retryWrites=true&w=majority",
-  "jwtSecret": "thisismytokensecret123456!@#",
-  "acc_token": "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"
-}
