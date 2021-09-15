@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import './utils/axiosConfig';
 import './App.css';
 import store from './store';
 import Landing from './components/layout/Landing';
