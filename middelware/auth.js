@@ -9,7 +9,10 @@ const auth = (req, res, next) => {
   }
   token = token.replace('Bearer ', '');
   try {
-    const decoded = jwt.verify(token, config.get('jwtSecret'));
+    const decoded = jwt.verify(
+      token,
+      config.get('jwtSecret') || process.env.jwtSecret
+    );
     req.user = { id: decoded.id };
 
     next();

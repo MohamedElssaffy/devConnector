@@ -310,7 +310,9 @@ router.get('/github/:username', async (req, res) => {
 
     const headers = {
       'user-agent': `node.js`,
-      Authorization: `token ${config.get('acc_token')}`,
+      Authorization: `token ${
+        config.get('acc_token') || process.env.acc_token
+      }`,
     };
 
     const githubdrequest = await axios(uri, headers);
