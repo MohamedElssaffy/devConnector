@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
   try {
     const decoded = jwt.verify(
       token,
-      config.get('jwtSecret') || process.env.jwtSecret
+      process.env.jwtSecret || config.get('jwtSecret')
     );
     req.user = { id: decoded.id };
 
