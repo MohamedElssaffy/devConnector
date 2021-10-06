@@ -37,10 +37,10 @@ const App = () => {
       <BrowserRouter>
         <Fragment>
           <Navbar />
-          <Alert />
           <Switch>
             <Route path='/' exact component={Landing} />
             <section className='container'>
+              <Alert />
               <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
               <Route path='/profiles' component={Profiles} />
